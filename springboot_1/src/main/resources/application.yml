@@ -1,0 +1,4 @@
+logging:
+  file: F:\\zhihui\\github\\miaosha-\\springboot_1\\src\\main\\resources\\log.log
+  level:
+    cn.bdqn: debug
