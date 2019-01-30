@@ -1,14 +1,19 @@
 package cn.bdqn;
 
+import cn.bdqn.interceptor.DemoInterceptor;
+import cn.bdqn.messageconverter.MyMessageConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import java.util.List;
 
 @Configuration
 @EnableWebMvc// 1
@@ -33,16 +38,16 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 
 	}
 
-	/*@Bean
+	@Bean
 	// 1
 	public DemoInterceptor demoInterceptor() {
 		return new DemoInterceptor();
-	}*/
+	}
 
-	/*@Override
+	@Override
 	public void addInterceptors(InterceptorRegistry registry) {// 2
 		registry.addInterceptor(demoInterceptor());
-	}*/
+	}
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -65,7 +70,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		return multipartResolver;
 	}
 	
-	/*@Override
+	@Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         converters.add(converter());
     }
@@ -73,7 +78,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 	@Bean 
 	public MyMessageConverter converter(){
 		return new MyMessageConverter();
-	}*/
+	}
 
 	
 
