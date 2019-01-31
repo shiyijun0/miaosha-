@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+  <properties resource="jdbc.properties">
+    <!-- <property name="database.driver" value="com.mysql.jdbc.Driver"/> <property
+        name="database.url" value="jdbc:mysql://localhost:3306/chapter4"/> <property
+        name="database.username" value="root"/> <property name="database.password"
+        value="123456"/> -->
+  </properties>
+
+  <typeAliases><!-- 别名 -->
+     <!-- <typeAlias alias="role" type="cn.bdqn.pojo.Role"/>-->
+    <package name="cn.bdqn.pojo" />
+  </typeAliases>
+
+
+
+  <!-- 数据库环境 -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${database.driver}" />
+        <property name="url" value="${database.url}" />
+        <property name="username" value="${database.username}" />
+        <property name="password" value="${database.password}" />
+      </dataSource>
+    </environment>
+  </environments>
+  <!-- 映射文件 -->
+  <mappers>
+    <!--<mapper resource="cn/bdqn/mapper/RoleMapper.xml"/>-->
+    <mapper resource="RoleMapper.xml"/>
+    <mapper class="cn.bdqn.mapper.RoleMapper2"/>
+  </mappers>
+</configuration>
