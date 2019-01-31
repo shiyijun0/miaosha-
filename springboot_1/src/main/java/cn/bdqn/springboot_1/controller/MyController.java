@@ -2,26 +2,16 @@ package cn.bdqn.springboot_1.controller;
 
 import cn.bdqn.springboot_1.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller//1
-public class HelloController {
-	
-	@RequestMapping("/index")//2
-	@ResponseBody
-	public  String hello(){
-
-		return "index";
-	}
-
+@RestController("/api")
+public class MyController {
 	@Autowired
 	DemoService demoService;
 
 
-	@RequestMapping("/rollback11")
-	@ResponseBody
+	@RequestMapping("/rollback1")
 	public String rollback1(){ //1
 		System.out.println("***");
 		return "的广泛覆盖ffff1";

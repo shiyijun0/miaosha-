@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_1" />
+        <module name="springboot_1" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring_1" target="1.7" />
+      <module name="springboot_1" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
