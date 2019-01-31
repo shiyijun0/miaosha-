@@ -11,6 +11,7 @@ public class Person implements Serializable {
     private String name;
     private int age;
     private String address;
+    private String nation;
 
     public Person() {
         super();
@@ -20,6 +21,14 @@ public class Person implements Serializable {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+
+    public String getNation() {
+        return nation;
+    }
+
+    public void setNation(String nation) {
+        this.nation = nation;
     }
 
     public int getId() {

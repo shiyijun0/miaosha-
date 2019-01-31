@@ -8,4 +8,7 @@ logging:
 spring:
   profiles:
     active: dev
-logging.f
+  batch:
+    job:
+      enabled: true
+
